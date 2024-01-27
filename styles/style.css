@@ -136,9 +136,9 @@
 .section__h2--two{
     font-size: 3em;
 }
-.h2__span--two {
-    font-weight: bold;
-}
+    .h2__span--two {
+        font-weight: bold;
+    }
 
 .section__ul--two{
     display: flex;
@@ -204,13 +204,15 @@
     width: 100%;
     height: 20rem;
 
-    gap: 5rem;
+    gap: 2rem;
 }
     .div__p--three{
         font-size: 3em;
         font-style: italic;
+        line-height: 1.2;
 
         text-wrap: balance;
+        text-align: center;
     }
     .div__cite--three{
         font-size: 1.5em;
@@ -244,11 +246,15 @@
     border-radius: 1rem;
 }
     .div__span--four{
-        font-size: 2em;
+        font-size: clamp(1.7em ,2.2vw, 3em); /* 2em */
         font-weight: bold;
+        line-height: 1.2;
+
+        text-wrap: balance;
+        text-align: center;
     }
     .div__a--four{
-        font-size: 2.5em;
+        font-size: clamp(2em ,4.0vw, 3.5em); /* 2.5em */
 
         font-weight: bold;
         cursor: pointer;
@@ -306,4 +312,92 @@
 .footer__span--one{
     display: flex;
     gap: 0.5rem;
-} 
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 1024px){
+    .main__section--one{
+        padding: 4rem 1.4rem 0rem;
+    }
+        .section__div--one{
+            height: auto;
+        }
+        .section__h1--one{
+            font-size: clamp(2em, 5vw, 4em);
+        } /* 3em */
+        .section__p--one{
+            font-size: clamp(1em , 2.2vw, 2em);
+            text-wrap: balance;
+        } /* 1.4em */
+        .section__img--one{
+            width: clamp(15rem , 31vw, 30rem);
+        } /*  20rem */
+
+    .section__h2--two{
+        font-size: clamp(2em , 5vw, 4em);
+        
+        text-wrap: balance;
+        text-align: center;
+        line-height: 1.2;
+    }
+        .a__img--two{
+            width: clamp(8rem, 15.5vw, 10rem);
+        }
+        .li__p--two,
+        .li__span--two{
+            font-size: clamp(1em, 2.1vw, 2em);
+        } /* 1.3em */
+        .li__a--two--links{
+            font-size: clamp(0.8em, 1.6vw, 2em);
+        }
+    .div__p--three{
+        font-size: clamp(2em , 4.7vw, 5em);
+    } /* 3em */
+    .div__cite--three{
+        font-size: clamp(1em ,2.3vw, 3em);
+    } /* 1.5em */
+
+    .section__div--four{
+        width: clamp(20rem ,94vw, 70rem); /*  60rem */
+        height: clamp(8rem ,27vh, 15rem); /* 10rem */
+
+        margin: 0 2rem;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 876px){
+    .main__section--one{
+        justify-content: center;
+        align-items: center;
+    }
+        .section__div--one{
+            margin-bottom: clamp(-30rem , -20vw, -13.5rem);
+            /* -13rem */
+        }
+        .section__h1--one{
+            text-align: center;
+        }
+        .section__p--one{
+            text-align: center;
+        }
+        .section__button--one{
+            display: none;
+        }
+    .section__ul--two{
+        padding: 1rem;
+    }
+    
+    .li__ul--two--links{
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .header__nav{
+        display: none;
+    }
+    .li__ul--two--links{
+        margin-bottom: 1rem;
+    }
+}
